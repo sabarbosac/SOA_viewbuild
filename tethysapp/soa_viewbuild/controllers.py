@@ -72,3 +72,11 @@ def home(request):
     }
 
     return render(request, 'soa_viewbuild/home.html', context)
+
+def instructions(request):
+    context = {}
+    return render(request, 'soa_viewbuild/instructions.html', context)
+
+def proposal(request):
+    context = {}
+    return render(request, 'soa_viewbuild/proposal.html', context)

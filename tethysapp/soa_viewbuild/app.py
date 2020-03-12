@@ -8,11 +8,11 @@ class SoaViewbuild(TethysAppBase):
 
     name = 'Soa Viewbuild'
     index = 'soa_viewbuild:home'
-    icon = 'soa_viewbuild/images/icon.gif'
+    icon = 'soa_viewbuild/images/icons_viewbuild.png'
     package = 'soa_viewbuild'
     root_url = 'soa-viewbuild'
     color = '#27ae60'
-    description = '"This is an app to simulate the function viewshed in the city of New York"'
+    description = '"This is an app to simulate the function viewshed in the city of New York. This was a project during the pandemia of the corona virus"'
     tags = '"Viewshed", "CE 514" , "BYU", "Corona Virus"'
     enable_feedback = False
     feedback_emails = []
@@ -28,6 +28,16 @@ class SoaViewbuild(TethysAppBase):
                 name='home',
                 url='soa-viewbuild',
                 controller='soa_viewbuild.controllers.home'
+            ),
+            UrlMap(
+                name='instructions',
+                url='soa-viewbuild/instructions',
+                controller='soa_viewbuild.controllers.instructions'
+            ),
+            UrlMap(
+                name='proposal',
+                url='soa-viewbuild/proposal',
+                controller='soa_viewbuild.controllers.proposal'
             ),
         )
 

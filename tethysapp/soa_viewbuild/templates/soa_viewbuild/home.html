@@ -1,5 +1,7 @@
 {% extends "soa_viewbuild/base.html" %}
 {% load tethys_gizmos %}
+{% load static %}
+
 
 {% block header_buttons %}
   <div class="header-button glyphicon-button" data-toggle="tooltip" data-placement="bottom" title="Help">
@@ -8,14 +10,121 @@
 {% endblock %}
 
 {% block app_content %}
-  <h1>Welcome to your Tethys App!</h1>
-  <p>Take advantage of beautiful typography to organize the content of your app:</p>
-  <h1>Heading 1</h1>
-  <h2>Heading 2</h2>
-  <h3>Heading 3</h3>
-  <h4>Heading 4</h4>
-  <h5>Heading 5</h5>
-  <h6>Heading 6</h6>
+<style>
+    /*Three columns side by side*/
+body {
+
+background-image: url(img/floral.jpg);
+
+}
+.column {
+float: left;
+width: 33.3%;
+margin-bottom: 16px;
+padding: 0 10px;
+color: blue;
+}
+
+/* Display the columns below each other instead of side by side on small screens */
+@media screen and (max-width: 650px) {
+.column {
+width: 100%;
+}
+}
+
+/* Add some shadows to create a card effect */
+.card {
+background-color:royalblue;
+box-shadow: 0 4px 8px 0 blueviolet;
+}
+
+/* Some left and right padding inside the container */
+.container {
+background-color: cyan;
+padding: 0 16px;
+}
+
+/* Clear floats */
+.container::after, .row::after {
+content: "";
+display: table;
+}
+
+.title {
+color: green;
+}
+
+.button {
+border: none;
+outline: 0;
+display: inline-block;
+padding: 8px;
+color: white;
+background-color: blueviolet;
+text-align: center;
+cursor: pointer;
+width: 100%;
+}
+
+.button:hover {
+background-color: #555;
+}
+</style>
+
+<body>
+  <h2>Team Introduction</h2>
+          <p class="title">"This project is a product of collective effort from members of our team called 'Sons and daughter of Anarchy' which includes Hayden Andersen, Danisa Dolder, Giovanni and Abhishek Amalaraj"</p>
+          <p>"The webapp is called ViewBUILD which can help identify the locations of a city that can be viewed from a point located in a city. The app also has preproccesed information which shows us empty land areas which are vacant for the purpose of building skyscrapers"</p>
+
+<div class="row">
+    <div class="column">
+      <div class="card">
+        <img src="{% static 'soa_viewbuild/images/danisa.jpg' %}" width=300 height=350>
+        <div class="container">
+          <h2>Danisa</h2>
+          <p class="title">(the hard worker)</p>
+
+
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="card">
+        <img src="{% static 'soa_viewbuild/images/hayden.jpg' %}" width=300 height=350>
+        <div class="container">
+          <h2>Hayden Andersen</h2>
+          <p class="title">(The true American hero)</p>
+
+        </div>
+      </div>
+    </div>
+
+<div class="row">
+    <div class="column">
+      <div class="card">
+        <img src="{% static 'soa_viewbuild/images/gio.jpg' %}" width=300 height=350>
+        <div class="container">
+          <h2>Giovanni Bustamante</h2>
+          <p class="title">( the evil mastermind)</p>
+
+
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="card">
+        <img src="{% static 'soa_viewbuild/images/abu.jpg' %}" width=300 height=350>
+        <div class="container">
+          <h2>Abhishek Amalaraj</h2>
+          <p class="title">Just a guy from India who likes Ice cream</p>
+
+        </div>
+      </div>
+    </div>
+
+  </body>
 {% endblock %}
 
 {# Use the after_app_content block for modals #}
